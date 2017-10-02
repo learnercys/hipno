@@ -1,0 +1,29 @@
+{
+  "name": "hipno",
+  "version": "0.0.0",
+  "description": "GraphQL Test Application Edit",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/learnercys/hipno.git"
+  },
+  "keywords": [
+    "graphql"
+  ],
+  "author": "Carlos Hernandez <learnercys@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/learnercys/hipno/issues"
+  },
+  "homepage": "https://github.com/learnercys/hipno#readme",
+  "dependencies": {
+    "express": "~4.16.1",
+    "express-graphql": "~0.6.11",
+    "graphql": "~0.11.6",
+    "lodash": "~4.17.4"
+  }
+}
