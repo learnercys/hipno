@@ -4,7 +4,8 @@ const graphQL = require('graphql');
 
 const {
   GraphQLSchema,
-  GraphQLObjectType
+  GraphQLObjectType,
+  GraphQLInputObjectType
 } = graphQL;
 
 const Users = [{
@@ -42,12 +43,32 @@ const query = new GraphQLObjectType({
   }
 });
 
+const userInputType = new GraphQLInputObjectType({
+  name: 'UserInput',
+  fields: {
+    name: {
+      type: graphQL.GraphQLString
+    }
+  }
+});
+
 // TODO implement mutations
 const mutation = new GraphQLObjectType({
   name: 'Mutation',
   fields: {
     createUser: {
-      type: userType
+      type: userType,
+      args: {
+        input: {
+          name: 'input',
+          type: userInputType
+        }
+      },
+      resolve(root, params, options) {
+        const user = {id: Math.floor(Math.random()), name: params.input.name};
+
+        return user;
+      }
     }
   }
 });
